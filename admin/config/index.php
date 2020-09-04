@@ -2,7 +2,7 @@
 require_once '../../library/config.php';
 require_once '../library/functions.php';
 
-checkUser();
+checkadminUser();
 
 $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 
