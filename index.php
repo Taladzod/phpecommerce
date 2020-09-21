@@ -34,7 +34,7 @@ if ($pdId) {
 }
 ?>  
   </td>
-  <td width="130" align="center">[ใส่โฆษณาที่นี่]</td>
+  <td width="130" align="center"> <?php require_once 'include/miniCart.php'; ?></td>
  </tr>
 </table>
 <?php

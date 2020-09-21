@@ -9,6 +9,7 @@ $self = WEB_ROOT . 'admin/index.php';
 <html>
 <head>
 <title><?php echo $pageTitle; ?></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta charset="utf-8">
 <link href="<?php echo WEB_ROOT;?>admin/include/admin.css" rel="stylesheet" type="text/css">
 <script language="JavaScript" type="text/javascript" src="<?php echo WEB_ROOT;?>library/common.js"></script>

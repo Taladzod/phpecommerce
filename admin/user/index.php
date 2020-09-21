@@ -3,7 +3,7 @@ require_once '../../library/config.php';
 require_once '../library/functions.php';
 
 $_SESSION['login_return_url'] = $_SERVER['REQUEST_URI'];
-checkUser();
+checkAdminUser();
 
 
 $errorMessage = '';
@@ -12,15 +12,15 @@ if (isset($_GET['btnModify'])) {
 	$oldPassword = $_GET['txtOldPassword'];
 	$newPassword = $_GET['txtNewPassword1'];
 	$sql = "SELECT user_id FROM tbl_user WHERE user_id = $userId AND user_password = '$oldPassword' ";
-	$result = mysql_query($sql) or die(mysql_error());
-	if (mysql_num_rows($result) != 1) {
+	$result = mysqli_query($dbConn, $sql) or die(mysqli_error($dbConn));
+	if (mysqli_num_rows($result) != 1) {
 		$errorMessage = 'Old password is incorrect';
 		echo "<script>alert('Old password is incorrect')</script>";
 	} else {	
 		$sql = "UPDATE tbl_user 
 				SET user_password = '$newPassword'
 				WHERE user_id = $userId";
-		mysql_query($sql) or die('Modify failed. ' . mysql_error());
+		mysqli_query($dbConn, $sql) or die('Modify failed. ' . mysqli_error($dbConn));
 		header('Location: index.php');
 		exit;			
 	}	
@@ -30,13 +30,13 @@ if (isset($_POST['btnAddUser'])) {
 	$userName = $_POST['txtUserName'];
 	$userPass = $_POST['txtPassword'];
 	$sql = "SELECT user_id FROM tbl_user WHERE user_name = '$userName' ";
-	$result = mysql_query($sql) or die(mysql_error());
-	if (mysql_num_rows($result) > 0) {
+	$result = mysqli_query($dbConn, $sql) or die(mysqli_error($dbConn));
+	if (mysqli_num_rows($result) > 0) {
 		$errorMessage = 'Can not use this user name';
 		echo "<script>alert('Username is already use')</script>";
 	} else {	
 		$sql = "INSERT into tbl_user (user_name, user_password) VALUES ('$userName', '$userPass')";
-		$result = mysql_query($sql) or die(mysql_error());
+		$result = mysqli_query($dbConn, $sql) or die(mysqli_error($dbConn));
 		header('Location: index.php');
 		exit;		
 	}					

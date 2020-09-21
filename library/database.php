@@ -1,7 +1,7 @@
 <?php
 require_once 'config.php';
 
-$dbConn = mysqli_connect ($dbHost, $dbUser, $dbPass, $dbName) //or die ('MySQL connect failed. ' . mysqli_error());
+$dbConn = mysqli_connect ($dbHost, $dbUser, $dbPass, $dbName); //or die ('MySQL connect failed. ' . mysqli_connect_error());
 //mysql_select_db($dbName) or die('Cannot select database. ' . mysql_error());
 //mysql_query("SET NAMES UTF8");
 

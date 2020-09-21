@@ -2,7 +2,7 @@
 require_once '../../library/config.php';
 require_once '../library/functions.php';
 
-checkUser();
+checkAdminUser();
 
 $action = isset($_GET['action']) ? $_GET['action'] : '';
 switch ($action) {

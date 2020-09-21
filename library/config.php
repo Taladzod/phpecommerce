@@ -10,7 +10,7 @@ session_start();
 $dbHost = 'localhost';
 $dbUser = 'root';
 $dbPass = '';
-$dbName = 'newphpshop';
+$dbName = 'phpshopold';
 
 // setting up the web root and server root for
 // this shopping cart application
