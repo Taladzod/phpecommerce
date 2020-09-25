@@ -1,16 +1,23 @@
 <?php
 ini_set('display_errors', 'On');
 //ob_start("ob_gzhandler");
-error_reporting(E_ALL ^ E_DEPRECATED);
+//error_reporting(E_ALL ^ E_DEPRECATED);
 
 // start the session
 session_start();
 
 // database connection config
+<<<<<<< HEAD
 $dbHost = 'localhost';
 $dbUser = 'root';
 $dbPass = '';
 $dbName = 'phpshopold';
+=======
+$dbHost = '150.95.25.150';
+$dbUser = 'admin_newphpshop';
+$dbPass = 'Iamzeo#2517';
+$dbName = 'admin_newphpshop';
+>>>>>>> 5a4934005c07ba78b0247340b095eb39a52c3bc2
 
 // setting up the web root and server root for
 // this shopping cart application

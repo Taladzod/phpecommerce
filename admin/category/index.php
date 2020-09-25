@@ -3,7 +3,11 @@ require_once '../../library/config.php';
 require_once '../library/functions.php';
 
 $_SESSION['login_return_url'] = $_SERVER['REQUEST_URI'];
+<<<<<<< HEAD
 checkAdminUser();
+=======
+checkadminUser();
+>>>>>>> 5a4934005c07ba78b0247340b095eb39a52c3bc2
 
 $view = (isset($_GET['view']) && $_GET['view'] != '') ? $_GET['view'] : '';
 
